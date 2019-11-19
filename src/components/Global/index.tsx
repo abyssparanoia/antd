@@ -3,15 +3,11 @@ import { SideMenu } from './SideMenu'
 import { Layout } from 'antd'
 const { Sider } = Layout
 
-interface Props {
-  tableList: string[]
-}
-
-export const Global = ({ tableList }: Props) => {
+export const Global = () => {
   return (
     <Layout style={{ height: '100vh' }}>
       <Sider>
-        <SideMenu tableList={tableList} />
+        <SideMenu />
       </Sider>
     </Layout>
   )
