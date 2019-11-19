@@ -28,3 +28,12 @@ export const fetchTableList = () => async (dispatch: Dispatch) => {
   const list = ['users', 'posts', 'post_favorites']
   return dispatch(actions.fetchTableList.done({ result: { list } }))
 }
+
+export const reducer = reducerWithInitialState(initialState)
+  .case(actions.fetchTableList.started, state => ({
+    ...state,
+    isLoading: true
+  }))
+  .case(actions.fetchTableList.done, (state, payload) => ({ ...state, isLoading: false, list: payload.result.list }))
+  .case(actions.fetchTableList.failed, (state, payload) => ({ ...state, isLoading: false, error: payload.error }))
+  .build()
