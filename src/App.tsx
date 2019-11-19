@@ -26,17 +26,18 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Global />
-      <Editor
-        value={sql}
-        onValueChange={handleChange}
-        highlight={highlight}
-        padding={10}
-        style={{
-          fontFamily: '"Fira code", "Fira Mono", monospace',
-          fontSize: 12
-        }}
-      />
+      <Global>
+        <Editor
+          value={sql}
+          onValueChange={handleChange}
+          highlight={highlight}
+          padding={10}
+          style={{
+            fontFamily: '"Fira code", "Fira Mono", monospace',
+            fontSize: 12
+          }}
+        />
+      </Global>
     </div>
   )
 }
