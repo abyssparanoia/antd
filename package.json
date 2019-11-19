@@ -1,5 +1,5 @@
 {
-  "name": "init-app",
+  "name": "antd",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -70,11 +70,25 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^2.0.1",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
+    "pre-commit": "^1.2.2",
     "prettier": "^1.18.2",
     "react-docgen-typescript-loader": "^3.2.0",
     "react-scripts": "3.1.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "typescript": "3.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{.ts,tsx}": [
+      "eslint --fix -c ./.eslintrc.json './src/**/*.{ts,tsx}'",
+      "git add"
+    ]
   }
 }
