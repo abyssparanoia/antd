@@ -14,7 +14,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Button>テスト</Button>
+      <Button>test</Button>
       {table.list.map((tableName, index) => (
         <div key={index}>{tableName}</div>
       ))}
