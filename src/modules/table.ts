@@ -2,8 +2,29 @@ import actionCreatorFactory from 'typescript-fsa'
 import { reducerWithInitialState } from 'typescript-fsa-reducers'
 import { Dispatch } from 'redux'
 
+const timeout = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms))
+
 const actionCreator = actionCreatorFactory('table')
 
 export const actions = {
-  list: actionCreator.async<void, { list: string[] }, Error>('list')
+  fetchTableList: actionCreator.async<void, { list: string[] }, Error>('list')
+}
+
+export interface State {
+  list: string[]
+  isLoading: boolean
+  error?: Error
+}
+
+const initialState: State = {
+  list: [],
+  isLoading: false
+}
+
+export const fetchTableList = () => async (dispatch: Dispatch) => {
+  dispatch(actions.fetchTableList.started())
+  await timeout(1500)
+  // mock data
+  const list = ['users', 'posts', 'post_favorites']
+  return dispatch(actions.fetchTableList.done({ result: { list } }))
 }
