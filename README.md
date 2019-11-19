@@ -25,6 +25,3 @@ $ yarn start:storybook
 ```bash
 $ yarn build
 ```
-
-- build 配下に吐かれたファイルが成果物です
-- index.html をエントリーポイントとして、build 以下を全て配信すれば動きます
