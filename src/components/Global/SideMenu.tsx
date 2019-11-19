@@ -8,7 +8,7 @@ interface Props {
 
 export const SideMenu = ({ tableList }: Props) => {
   return (
-    <Menu style={{ width: 256 }} defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} mode="inline">
+    <Menu defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']} mode="inline" theme="dark">
       <SubMenu
         key="sub1"
         title={
