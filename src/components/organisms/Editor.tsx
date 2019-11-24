@@ -3,6 +3,7 @@ import { Card } from 'antd'
 import { default as OriginalEditor } from 'react-simple-code-editor'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import theme from 'prism-react-renderer/themes/vsDark'
+import { variable } from '../variable'
 
 export const Editor = () => {
   const [sql, setSql] = useState<string>('')
@@ -25,7 +26,7 @@ export const Editor = () => {
   )
 
   return (
-    <Card>
+    <Card style={{ background: variable['@component-background'] }}>
       <OriginalEditor
         value={sql}
         onValueChange={handleChange}

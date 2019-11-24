@@ -1,5 +1,6 @@
 import React from 'react'
 import { Table, Card } from 'antd'
+import { variable } from '../variable'
 
 export const ResultTable = () => {
   const dataSource = [
@@ -36,7 +37,7 @@ export const ResultTable = () => {
   ]
 
   return (
-    <Card>
+    <Card style={{ backgroundColor: variable['@component-background'] }}>
       <Table dataSource={dataSource} columns={columns} />
     </Card>
   )
