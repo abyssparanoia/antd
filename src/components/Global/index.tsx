@@ -9,7 +9,7 @@ export const Global: React.FC = ({ children }) => {
       <Sider>
         <SideMenu />
       </Sider>
-      <Content>{children}</Content>
+      <Content style={{ padding: 24, minHeight: '100vh' }}>{children}</Content>
     </Layout>
   )
 }
