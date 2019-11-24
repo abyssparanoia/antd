@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table } from 'antd'
+import { Table, Card } from 'antd'
 
 export const ResultTable = () => {
   const dataSource = [
@@ -35,5 +35,9 @@ export const ResultTable = () => {
     }
   ]
 
-  return <Table dataSource={dataSource} columns={columns} />
+  return (
+    <Card>
+      <Table dataSource={dataSource} columns={columns} />
+    </Card>
+  )
 }
